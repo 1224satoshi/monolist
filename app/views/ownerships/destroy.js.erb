@@ -1,6 +1,7 @@
-<% if params[:type] == "Have" %>
+<% if params[:type] == "Have it" %>
   $(".have-<%= @item.id %>").replaceWith("<%= escape_javascript(render('items/have' , item: @item)) %>");
-<% else %>
+<% end %>
+<% if params[:type] == "Want it" %>
   $(".want-<%= @item.id %>").replaceWith("<%= escape_javascript(render('items/want' , item: @item)) %>");
 <% end %>
 
