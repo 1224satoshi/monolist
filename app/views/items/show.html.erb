@@ -33,7 +33,7 @@
       </div>
       <div class="text-center">
         <% #TODO 正しいリンク先に %>
-        <%= link_to(image_tag("amazon-button.png"), "http://www.amazon.co.jp/dp/#{@item.detail_page_url}/",  :target=>'_blank') %>
+        <%= link_to(image_tag("amazon-button.png"), "#{@item.detail_page_url}/",  :target=>'_blank') %>
       </div>
     </div>
   </div>
