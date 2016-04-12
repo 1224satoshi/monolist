@@ -1,4 +1,7 @@
-<div class="box">
+<% content_for :head do %>
+  <title>New</title>
+  <meta name="description" content="登録画面です">
+<% end %><div class="box">
   <h2 class="box-title">会員登録</h2>
   <div class="box-inner">
     <%= form_for(@user) do |f| %>

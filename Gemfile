@@ -31,6 +31,8 @@ gem 'bootstrap-sass'
 # https://github.com/jugend/amazon-ecs
 gem 'amazon-ecs'
 
+gem 'meta-tags'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'

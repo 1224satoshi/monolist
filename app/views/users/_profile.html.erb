@@ -1,3 +1,7 @@
+<% content_for :head do %>
+  <title>Profile</title>
+  <meta name="description" content="ユーザーのプロフィールです">
+<% end %>
 <div class="user-profile">
   <div class="icon">
     <%= gravatar_for current_user, size: 100 %>

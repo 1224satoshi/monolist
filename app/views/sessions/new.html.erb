@@ -1,4 +1,7 @@
-<div class="box">
+<% content_for :head do %>
+  <title>Log In</title>
+  <meta name="description" content="ログイン画面です">
+<% end %><div class="box">
   <h2 class="box-title">ログイン</h2>
   <div class="box-inner">
     <%= form_for(:session, url: login_path) do |f| %>
