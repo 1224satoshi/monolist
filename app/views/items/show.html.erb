@@ -30,7 +30,7 @@
         <h4 class="side-box-title">Wantしたユーザー</h4>
         <div class="side-box-body">
           <% # TODO Wantしたユーザー一覧 %>
-           <% @item.have_users.each do |user| %>
+           <% @item.want_users.each do |user| %>
             <%= render partial: 'user_list', locals: { user: user } %>
            <% end %>
         </div>
