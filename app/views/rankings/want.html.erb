@@ -1,0 +1,49 @@
+<% content_for :head do %>
+  <title>ランキング</title>
+  <meta name="description" content="Wantされたアイテムのランキングページです" >
+<% end %>
+<% @want_rankings.each_with_index do |(item, count), rank| %>
+  <div class="container">
+   <div class="container-inner inner-sm clearfix">
+    <h2><%= rank+1 %>位</h2>
+     <p>WANTしている人数<%= count %>人</p>
+      <div class="item-box">
+          <div class="image">
+            <div class="img-wrap">
+              <% if item.large_image.present? %>
+                <%= image_tag(item.large_image , alt: item.title) %>
+              <% else %>
+                <%= image_tag("no-image.png" , alt: item.title) %>
+              <% end %>
+               <div class="detail">
+                <p class="title">
+                 <%= item.title %>
+                </p>
+               </div>
+           </div>
+         </div>
+     </div>
+    <div class="item-single-side">
+       <div class="side-box">
+        <h4 class="side-box-title">Haveしたユーザー</h4>
+        <div class="side-box-body">
+           <% item.have_users.each do |user| %>
+            <%= render partial: 'user_list', locals: { user: user } %>
+           <% end %>
+        </div>
+       </div>
+      <div class="side-box">
+        <h4 class="side-box-title">Wantしたユーザー</h4>
+        <div class="side-box-body">
+           <% item.want_users.each do |user| %>
+            <%= render partial: 'user_list', locals: { user: user } %>
+           <% end %>
+        </div>
+      </div>
+     <div class="text-center">
+        <%= link_to(image_tag("amazon-button.png"), "#{item.detail_page_url}/",  :target=>'_blank') %>
+     </div>
+   </div>
+  </div>
+ </div>
+<% end %>
